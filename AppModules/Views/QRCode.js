@@ -5,7 +5,7 @@ export default class QRCode extends Component {
   render() {
     return (
       <View>
-        <Text> textInComponent </Text>
+        <Text> QR </Text>
       </View>
     );
   }
