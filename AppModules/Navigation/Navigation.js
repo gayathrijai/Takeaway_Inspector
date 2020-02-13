@@ -3,10 +3,10 @@ import { Text, View } from "react-native";
 import { createAppContainer } from "react-navigation";
 import "react-native-gesture-handler";
 import { createStackNavigator } from "react-navigation-stack";
-import QRCode from "../Views/QRCode";
-import StartInspection from "../Views/StartInspection";
-import FinishInspection from "../Views/FinishInspection";
-import LocationPermission from "../Views/LocationsPermissions";
+import QRCode from "../Views/03_QRscan";
+import StartInspection from "../Views/02_StartInspection";
+import FinishInspection from "../Views/04_FinishInspection";
+import LocationPermission from "../Views/01_LocationsFetch";
 export class Navigation extends Component {
   render() {
     return <AppContainer />;

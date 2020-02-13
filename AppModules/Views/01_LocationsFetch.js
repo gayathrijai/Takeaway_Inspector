@@ -1,30 +1,16 @@
 import React, { Component } from "react";
 import { Alert, StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import Geolocation from "react-native-geolocation-service";
+import { findCoordinates } from "../Modules/Permissions/01_LocationPermission";
+import { location } from "../Modules/Permissions/01_LocationPermission";
 
 export default class LocationsPermissions extends Component {
-  state = {
-    location: null
-  };
-
-  findCoordinates = () => {
-    Geolocation.getCurrentPosition(
-      position => {
-        const location = JSON.stringify(position);
-
-        this.setState({ location });
-      },
-      error => Alert.alert(error.message),
-      { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
-    );
-  };
-
   render() {
     return (
       <View style={styles.container}>
-        <TouchableOpacity onPress={this.findCoordinates}>
+        <TouchableOpacity onPress={findCoordinates}>
           <Text style={styles.welcome}>Find My Coords?</Text>
-          <Text>Location: {this.state.location}</Text>
+          <Text>Location: {location}</Text>
+          {console.log("Location in the View", location)}
         </TouchableOpacity>
       </View>
     );

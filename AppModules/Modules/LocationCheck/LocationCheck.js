@@ -1,12 +1,10 @@
-import React, { Component } from "react";
-import { Text, View } from "react-native";
+import * as geolib from "geolib";
 
-export default class LocationCheck extends Component {
-  render() {
-    return (
-      <View>
-        <Text> textInComponent </Text>
-      </View>
-    );
-  }
-}
+import { lat, lng } from "../API/NetworkRequest";
+
+export const distance = position => {
+  return geolib.getDistance(position, {
+    latitude: lat,
+    longitude: lng
+  });
+};
