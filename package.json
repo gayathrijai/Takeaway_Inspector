@@ -9,10 +9,14 @@
     "watch-need-help": "echo 256 | sudo tee -a /proc/sys/fs/inotify/max_user_instances && echo 32768 | sudo tee -a /proc/sys/fs/inotify/max_queued_events && echo 65536 | sudo tee -a /proc/sys/fs/inotify/max_user_watches && watchman shutdown-server"
   },
   "dependencies": {
+    "@react-native-community/geolocation": "^2.0.2",
     "@react-native-community/masked-view": "^0.1.6",
+    "geolib": "^3.2.1",
     "react": "16.8.3",
     "react-native": "0.59.9",
+    "react-native-geolocation-service": "^4.0.0",
     "react-native-gesture-handler": "^1.5.6",
+    "react-native-permissions": "^2.0.9",
     "react-native-reanimated": "^1.7.0",
     "react-native-safe-area-context": "^0.7.2",
     "react-native-screens": "^2.0.0-beta.2",
