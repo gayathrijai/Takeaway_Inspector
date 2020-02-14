@@ -3,6 +3,8 @@ package com.takeaway_inspector;
 import android.app.Application;
 import com.reactnativecommunity.rnpermissions.RNPermissionsPackage;
 import com.facebook.react.ReactApplication;
+import com.levelasquez.androidopensettings.AndroidOpenSettingsPackage;
+import com.krazylabs.OpenAppSettingsPackage;
 import com.agontuk.RNFusedLocation.RNFusedLocationPackage;
 import com.reactnativecommunity.geolocation.GeolocationPackage;
 import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
@@ -29,6 +31,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new AndroidOpenSettingsPackage(),
+            new OpenAppSettingsPackage(),
             new RNFusedLocationPackage(),
             new GeolocationPackage(),
             new SafeAreaContextPackage(),

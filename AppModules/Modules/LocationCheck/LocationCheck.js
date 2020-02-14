@@ -4,6 +4,7 @@ import Geolocation from "react-native-geolocation-service";
 
 import React, { Component } from "react";
 import { Alert } from "react-native";
+import { locationAlert } from "../Alert/LocationPermissionAlert";
 
 class LocationCheck extends Component {
   findCoordinates = () => {
@@ -11,20 +12,12 @@ class LocationCheck extends Component {
       position => {
         const getDistance = distance(position.coords);
         if (getDistance > 100) {
-          Alert.alert("You know its wrong", "Go to takeaway", [
-            {
-              text: "Cancel",
-              style: "cancel"
-            },
-            { text: "OK" }
-          ]);
+          locationAlert();
         }
-        console.log("Inside Find Function");
         console.log(
           `You are , ${getDistance}, meters away from ${lat}, ${lng}`
         );
         locationNew = JSON.stringify(position.coords);
-        console.log("Location inside function", location);
       },
       error => Alert.alert(error.message),
       { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }

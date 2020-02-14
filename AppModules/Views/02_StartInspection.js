@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Text, View, Alert, Button } from "react-native";
+import { Text, View, Alert, Button, Image, StyleSheet } from "react-native";
 import { PermissionsAndroid } from "react-native";
 import Location from "../Modules/LocationCheck/LocationCheck";
 import { responseData } from "../Modules/API/NetworkRequest";
-import { FlatList } from "react-native-gesture-handler";
+import { locationPermissionAlert } from "../Modules/Alert/LocationPermissionAlert";
 
 export default class StartInspection extends Component {
   onInspect = async () => {
@@ -15,9 +15,7 @@ export default class StartInspection extends Component {
         console.log("Location Permission Granted.");
       } else {
         console.log("Location Permission Not Granted");
-        Alert.alert(
-          "App requires location permissions, go to Setting and enable permissions!"
-        );
+        locationPermissionAlert();
       }
     } catch (err) {
       console.warn(err);
@@ -40,7 +38,11 @@ export default class StartInspection extends Component {
         //     );
         //   }}
         // />
-        <Text>{responseData.title}</Text>
+        <View>
+          <Text>{responseData.title}</Text>
+          <Text>{responseData.owners_name}</Text>
+          <Text></Text>
+        </View>
       ) : (
         <Text>Not working</Text>
       );

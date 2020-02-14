@@ -1,12 +1,21 @@
-import React, { Component } from "react";
-import { Text, View, Alert } from "react-native";
+import { Alert } from "react-native";
+import AndroidOpenSettings from "react-native-android-open-settings";
+export const locationAlert = () => {
+  Alert.alert("You know its wrong", "Go to takeaway", [
+    {
+      text: "Cancel",
+      style: "cancel"
+    },
+    { text: "OK" }
+  ]);
+};
 
-export default class LocationPermissionAlert extends Component {
-  render() {
-    return (
-      <View>
-        <Text> textInComponent </Text>
-      </View>
-    );
-  }
-}
+export const locationPermissionAlert = () => {
+  Alert.alert("", "Go to Settings ", [
+    {
+      text: "Settings",
+      onPress: () => AndroidOpenSettings.appDetailsSettings()
+    },
+    { text: "OK" }
+  ]);
+};

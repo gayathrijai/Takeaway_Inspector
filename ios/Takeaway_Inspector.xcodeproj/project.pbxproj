@@ -50,6 +50,7 @@
 		D78E23CC1C04442D96F445EB /* libRNCGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B69057D11E3D43728571DCD7 /* libRNCGeolocation.a */; };
 		572FCBBFE65042628FCF741E /* libRNSimpleNativeGeofencing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C33A74FFCA47809C82BD9B /* libRNSimpleNativeGeofencing.a */; };
 		3FF07A660AFF40B599B60D92 /* libRNPermissions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A5774125C8F40EFA492D17F /* libRNPermissions.a */; };
+		C61083C02D594EDFB8C9CC2B /* libRNOpenAppSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A08F799BB4074725A236C557 /* libRNOpenAppSettings.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -374,6 +375,8 @@
 		94C33A74FFCA47809C82BD9B /* libRNSimpleNativeGeofencing.a */ = {isa = PBXFileReference; name = "libRNSimpleNativeGeofencing.a"; path = "libRNSimpleNativeGeofencing.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		28515E9DEBF44E4DAC56C6A4 /* RNPermissions.xcodeproj */ = {isa = PBXFileReference; name = "RNPermissions.xcodeproj"; path = "../node_modules/react-native-permissions/ios/RNPermissions.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		2A5774125C8F40EFA492D17F /* libRNPermissions.a */ = {isa = PBXFileReference; name = "libRNPermissions.a"; path = "libRNPermissions.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		00A4BB9CF5AF420E9937ECC5 /* RNOpenAppSettings.xcodeproj */ = {isa = PBXFileReference; name = "RNOpenAppSettings.xcodeproj"; path = "../node_modules/react-native-app-settings/ios/RNOpenAppSettings.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		A08F799BB4074725A236C557 /* libRNOpenAppSettings.a */ = {isa = PBXFileReference; name = "libRNOpenAppSettings.a"; path = "libRNOpenAppSettings.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -409,6 +412,7 @@
 				D78E23CC1C04442D96F445EB /* libRNCGeolocation.a in Frameworks */,
 				572FCBBFE65042628FCF741E /* libRNSimpleNativeGeofencing.a in Frameworks */,
 				3FF07A660AFF40B599B60D92 /* libRNPermissions.a in Frameworks */,
+				C61083C02D594EDFB8C9CC2B /* libRNOpenAppSettings.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,6 +612,7 @@
 				AC8BF89AD9ED4EBB8E94F0EA /* RNCGeolocation.xcodeproj */,
 				87F721D80D4341AF96D6910E /* RNSimpleNativeGeofencing.xcodeproj */,
 				28515E9DEBF44E4DAC56C6A4 /* RNPermissions.xcodeproj */,
+				00A4BB9CF5AF420E9937ECC5 /* RNOpenAppSettings.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1245,6 +1250,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1255,6 +1261,7 @@
 					"$(SRCROOT)/../node_modules/@react-native-community/geolocation/ios",
 					"$(SRCROOT)/../node_modules/react-native-simple-native-geofencing/ios",
 					"$(SRCROOT)/../node_modules/react-native-permissions/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-app-settings/ios",
 				);
 			};
 			name = Debug;
@@ -1286,6 +1293,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1296,6 +1304,7 @@
 					"$(SRCROOT)/../node_modules/@react-native-community/geolocation/ios",
 					"$(SRCROOT)/../node_modules/react-native-simple-native-geofencing/ios",
 					"$(SRCROOT)/../node_modules/react-native-permissions/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-app-settings/ios",
 				);
 			};
 			name = Release;
@@ -1325,6 +1334,7 @@
 					"$(SRCROOT)/../node_modules/@react-native-community/geolocation/ios",
 					"$(SRCROOT)/../node_modules/react-native-simple-native-geofencing/ios",
 					"$(SRCROOT)/../node_modules/react-native-permissions/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-app-settings/ios",
 				);
 			};
 			name = Debug;
@@ -1353,6 +1363,7 @@
 					"$(SRCROOT)/../node_modules/@react-native-community/geolocation/ios",
 					"$(SRCROOT)/../node_modules/react-native-simple-native-geofencing/ios",
 					"$(SRCROOT)/../node_modules/react-native-permissions/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-app-settings/ios",
 				);
 			};
 			name = Release;
@@ -1392,6 +1403,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1402,6 +1414,7 @@
 					"$(SRCROOT)/../node_modules/@react-native-community/geolocation/ios",
 					"$(SRCROOT)/../node_modules/react-native-simple-native-geofencing/ios",
 					"$(SRCROOT)/../node_modules/react-native-permissions/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-app-settings/ios",
 				);
 			};
 			name = Debug;
@@ -1441,6 +1454,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1451,6 +1465,7 @@
 					"$(SRCROOT)/../node_modules/@react-native-community/geolocation/ios",
 					"$(SRCROOT)/../node_modules/react-native-simple-native-geofencing/ios",
 					"$(SRCROOT)/../node_modules/react-native-permissions/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-app-settings/ios",
 				);
 			};
 			name = Release;
@@ -1489,6 +1504,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1499,6 +1515,7 @@
 					"$(SRCROOT)/../node_modules/@react-native-community/geolocation/ios",
 					"$(SRCROOT)/../node_modules/react-native-simple-native-geofencing/ios",
 					"$(SRCROOT)/../node_modules/react-native-permissions/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-app-settings/ios",
 				);
 			};
 			name = Debug;
@@ -1537,6 +1554,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1547,6 +1565,7 @@
 					"$(SRCROOT)/../node_modules/@react-native-community/geolocation/ios",
 					"$(SRCROOT)/../node_modules/react-native-simple-native-geofencing/ios",
 					"$(SRCROOT)/../node_modules/react-native-permissions/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-app-settings/ios",
 				);
 			};
 			name = Release;

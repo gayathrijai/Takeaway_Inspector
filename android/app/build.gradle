@@ -138,6 +138,8 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-android-open-settings')
+    implementation project(':react-native-app-settings')
     
     implementation project(':react-native-geolocation-service')
     implementation project(':@react-native-community_geolocation')
