@@ -17,5 +17,6 @@ export const fetchAPI = () => {
     })
 
     .catch(error => alert("Server error : Refresh the App" + error));
+  return responseData;
 };
 export { lat, lng, responseData };

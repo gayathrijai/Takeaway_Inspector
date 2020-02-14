@@ -1,15 +1,23 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { requestLocationPermission } from "../Modules/Permissions/LocationPermission";
-import { fetchAPI } from "../Modules/API/NetworkRequest";
+import { fetchAPI, responseData } from "../Modules/API/NetworkRequest";
 
 export default class LocationsPermissions extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      response: null
+    };
+  }
+
   onStart = () => {
     requestLocationPermission();
-    fetchAPI();
   };
 
   render() {
+    fetchAPI();
     const { navigation } = this.props;
     return (
       <View style={styles.container}>
