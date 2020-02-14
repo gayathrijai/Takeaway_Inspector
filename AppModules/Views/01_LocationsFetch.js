@@ -1,16 +1,25 @@
 import React, { Component } from "react";
-import { Alert, StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import { findCoordinates } from "../Modules/Permissions/01_LocationPermission";
-import { location } from "../Modules/Permissions/01_LocationPermission";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { requestLocationPermission } from "../Modules/Permissions/LocationPermission";
+import { fetchAPI } from "../Modules/API/NetworkRequest";
 
 export default class LocationsPermissions extends Component {
+  onStart = () => {
+    requestLocationPermission();
+    fetchAPI();
+  };
+
   render() {
+    const { navigation } = this.props;
     return (
       <View style={styles.container}>
-        <TouchableOpacity onPress={findCoordinates}>
-          <Text style={styles.welcome}>Find My Coords?</Text>
-          <Text>Location: {location}</Text>
-          {console.log("Location in the View", location)}
+        <TouchableOpacity
+          onPress={() => {
+            this.onStart();
+            navigation.navigate("Inspection");
+          }}
+        >
+          <Text style={styles.welcome}>Start Here</Text>
         </TouchableOpacity>
       </View>
     );

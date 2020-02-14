@@ -1,25 +1,22 @@
-import React, { Component } from "react";
 import { Alert } from "react-native";
-import Geolocation from "react-native-geolocation-service";
-import { distance } from "../LocationCheck/LocationCheck";
-import { lat, lng } from "../API/NetworkRequest";
+import { findCoordinates } from "../LocationCheck/LocationCheck";
+import { PermissionsAndroid } from "react-native";
 
-let location = '';
-
-
-export const findCoordinates = () => {
-  Geolocation.getCurrentPosition(
-    position => {
-      const getDistance = distance(position.coords);
-      console.log("Inside Find Function");
-      console.log(`You are , ${getDistance}, meters away from ${lat}, ${lng}`);
-      location = JSON.stringify(position.coords);
-      console.log("Location inside function", location);
-      return location
-    },
-    error => Alert.alert(error.message),
-    { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
-  );
-};
-export const { location };
-
+export async function requestLocationPermission() {
+  try {
+    const granted = await PermissionsAndroid.request(
+      PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+      {
+        title: "ReactNativeCode Location Permission",
+        message: "ReactNativeCode App needs access to your location "
+      }
+    );
+    if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+      console.log("Location Permission Granted.");
+    } else {
+      console.log("Location Permission Not Granted");
+    }
+  } catch (err) {
+    console.warn(err);
+  }
+}
