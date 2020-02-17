@@ -1,11 +1,17 @@
 package com.takeaway_inspector;
 
 import android.app.Application;
-
+import com.reactnativecommunity.rnpermissions.RNPermissionsPackage;
 import com.facebook.react.ReactApplication;
 import com.levelasquez.androidopensettings.AndroidOpenSettingsPackage;
+
 import com.reactnativecommunity.rnpermissions.RNPermissionsPackage;
 import org.reactnative.camera.RNCameraPackage;
+
+import com.krazylabs.OpenAppSettingsPackage;
+import com.agontuk.RNFusedLocation.RNFusedLocationPackage;
+import com.reactnativecommunity.geolocation.GeolocationPackage;
+
 import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
 import com.swmansion.rnscreens.RNScreensPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
@@ -31,8 +37,14 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
             new AndroidOpenSettingsPackage(),
+
             new RNPermissionsPackage(),
             new RNCameraPackage(),
+
+            new OpenAppSettingsPackage(),
+            new RNFusedLocationPackage(),
+            new GeolocationPackage(),
+
             new SafeAreaContextPackage(),
             new RNScreensPackage(),
             new RNGestureHandlerPackage(),

@@ -1,7 +1,7 @@
 package com.takeaway_inspector;
 
 import com.facebook.react.ReactActivity;
-
+import com.krazylabs.OpenAppSettingsPackage;
 public class MainActivity extends ReactActivity {
 
     /**

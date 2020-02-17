@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import {  StyleSheet, Text, View } from 'react-native';
 import QRCodeScanner from 'react-native-qrcode-scanner';
@@ -59,3 +60,4 @@ const styles = StyleSheet.create({
     { padding: 16, },
 });
 export default Qrcode; 
+
