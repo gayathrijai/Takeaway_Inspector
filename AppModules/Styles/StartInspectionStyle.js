@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native';
 export const StartInspectionStyle=StyleSheet.create({
     locationINspectionTakeawayName:{
       width: '60%',
+    
       height: 45,
       borderRadius:12,
       borderWidth: 4,

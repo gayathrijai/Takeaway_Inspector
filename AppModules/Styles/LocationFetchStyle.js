@@ -9,7 +9,7 @@ export const LocationFetchStyle = StyleSheet.create({
     
     },
     locationFetchSlider:
-    {
+    {backgroundColor: '#177614',
       top: 20,
       width: 210,
       borderRadius: 15,
