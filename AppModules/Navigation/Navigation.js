@@ -18,6 +18,9 @@ const AppNavigator = createStackNavigator({
   Inspection: StartInspection,
   Finish: FinishInspection,
   QRCode: QRCode
+},
+{
+  initialRouteName:'QRCode'
 });
 
 const AppContainer = createAppContainer(AppNavigator);

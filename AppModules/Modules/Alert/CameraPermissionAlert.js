@@ -1,12 +1,13 @@
-import React, { Component } from "react";
-import { Text, View } from "react-native";
+import { Alert } from "react-native";
+import AndroidOpenSettings from "react-native-android-open-settings";
+export const CameraPermissionAlert = () => {
+  Alert.alert("Camera permission needed", "please go to settings", [
+    {
+      text: "Settings",
+      onPress: () => AndroidOpenSettings.appDetailsSettings()
+    },
+    { text: "OK" }
+  ]);
+};
 
-export default class CameraPermissionAlert extends Component {
-  render() {
-    return (
-      <View>
-        <Text> textInComponent </Text>
-      </View>
-    );
-  }
-}
+ 
