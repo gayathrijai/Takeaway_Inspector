@@ -30,7 +30,7 @@ export default class StartInspection extends Component {
       responseData != null ? (
         <View >
           <View style={StartInspectionStyle.locationINspectionTakeawayName}>
-          <Text style={StartInspectionStyle.takeawayNameText}>{responseData.title.slice(",",17)}</Text>
+          <Text numberOfLines={1} style={StartInspectionStyle.takeawayNameText}>{responseData.title.slice(",",17)}</Text>
           </View>
           <Image source={{uri : 'https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/AN_images/AN138-Pizza-732x549-Thumb.jpg?w=756&h=567'}} style={StartInspectionStyle.StartInspectionTakeawayImage}/>
           <View >

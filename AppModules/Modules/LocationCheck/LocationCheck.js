@@ -25,7 +25,7 @@ class LocationCheck extends Component {
   };
   render() {
     return <></>;
-  }lat
+  }
 }
 
 export const distance = position => {
