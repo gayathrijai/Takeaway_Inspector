@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, TouchableOpacity,Image } from "react-native";
+import { Text, View, TouchableOpacity,Image } from "react-native";
 import { requestLocationPermission } from "../Modules/Permissions/LocationPermission";
 import { fetchAPI } from "../Modules/API/NetworkRequest";
 import { RNSlidingButton, SlideDirection } from 'rn-sliding-button'
+import { LocationFetchStyle } from "../Styles/LocationFetchStyle";
 
 export default class LocationsPermissions extends Component {
   constructor(props) {
@@ -23,16 +24,16 @@ export default class LocationsPermissions extends Component {
     fetchAPI();
     const { navigation } = this.props;
     return (
-      <View style={styles.locationFetchcontainer}>
+      <View style={LocationFetchStyle.locationFetchcontainer}>
           <View >
         <Image source={{ uri: 'https://lh3.googleusercontent.com/_8qSKwDwtaqo3M2IFkzftOcBfXzaEFMWUHfbwc8rvwY4Yck7T-BzWSopqVcc1Y-c8EU' }} style={{ width: 200, height: 200 }} />
         <RNSlidingButton
-          style={styles.locationFetchSlider}
+          style={LocationFetchStyle.locationFetchSlider}
           height={35}
           onSlidingSuccess={this.onStart}
           SlideDirection={SlideDirection.RIGHT} >
           <View >
-            <Text style={styles.sliderTextStyle}>
+            <Text style={LocationFetchStyle.sliderTextStyle}>
               Swipe to begin</Text>
           </View>
         </RNSlidingButton>
@@ -42,25 +43,3 @@ export default class LocationsPermissions extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  locationFetchcontainer:
-  {
-    flex:1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  
-  },
-  locationFetchSlider:
-  {
-    top: 20,
-    width: 210,
-    borderRadius: 15,
-  },
-  sliderTextStyle:
-  {
-    color: 'white',
-    fontSize: 20,
-    textAlign: 'center'
-  }
-});
