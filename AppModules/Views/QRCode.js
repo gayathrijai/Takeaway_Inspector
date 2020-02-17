@@ -1,68 +1,43 @@
 import React, { Component } from 'react';
-import { PermissionsAndroid, Alert } from 'react-native';
-import { AppRegistry, StyleSheet, Text, TouchableOpacity, Linking, View } from 'react-native';
+import {  StyleSheet, Text, View } from 'react-native';
 import QRCodeScanner from 'react-native-qrcode-scanner';
-import moment from 'moment';
+import QRCheck from '../Modules/QRCheck/QRCheck';
+ 
 
 class Qrcode extends Component {
-
-  state = { qdata: "", date: '', hrs: null }
-
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+      qrdata: "" 
+    }
+  }
+  
   onSuccess = (e) => {
     data: e.data
-    this.setState({ qdata: e.data })
-    const devicestime=moment(new Date()).format('DD MM YYYY HH:mm:ss');
-    console.log('devices-time==>',devicestime)
-    console.log('devicestimetype==>',typeof(devicestime))
-   this.getTimeDiff()
-  }
-  getTimeDiff = (differenceIn = 'minutes', floating= false) => {
-    var  data= JSON.stringify(this.state.qdata)
-    console.log('data=>',this.state.qdata)
-    console.log('datatype==>',typeof(data))
-    const  then = moment(data, "DD-MM-YYYY HH:mm:ss");
-    const  now = moment(new Date(), "DD-MM-YYYY HH:mm:ss");
-    console.log(then)
-    console.log(now)
-     
-    const  timeDifference = now.diff(then, differenceIn, floating);
-    if(timeDifference===0 || timeDifference <=30)
-    {
-      this.props.navigation.navigate('Finish')
-    
-    }
-    else{
-      alert('timeout retry')
-    }
-    console.log("Time difference -> " + timeDifference + ' ' + differenceIn);
-  }
-
+    this.setState({ qrdata: e.data })
    
+  }
   render() {
-    const today = this.state.currentDate;
-const day = moment(today).format("dddd");
-const date = moment(today).calendar();
-
+  
+    {this.state.qdata}
+    console.log(this.state.qdata)
     return (
-      <QRCodeScanner
+      <>
+        <QRCodeScanner
         onRead={this.onSuccess}
-        permissionDialogMessage="there is no camera permission"
         showMarker={true}  
         bottomContent={
           <View style={{ marginTop: 57 }}>
             <Text style={{ fontSize: 20, color: 'rgb(0,125,0)' }}>
-              {this.state.date}
-            </Text>
-            <Text style={{ fontSize: 20, color: 'rgb(0,125,0)' }}>   
-              {this.state.qdata}
-              {console.log('render==>',this.state.qdata)}
-              {this.getTimeDiff()}
-            </Text>
+            Scan the Fusion QR
+            </Text> 
           </View>}
-
       />
-    );
-    
+      <QRCheck qrdata = {this.state.qrdata}/> 
+      </>
+      
+    ); 
   }
 
 }

@@ -1,12 +1,38 @@
 import React, { Component } from "react";
-import { Text, View } from "react-native";
+import moment from 'moment';
+import { withNavigation } from 'react-navigation';
 
-export default class QRCheck extends Component {
+
+class QRCheck extends Component {
+  
+  
+  getTimeDiff = (differenceIn = 'minutes', floating= false) => {
+    var  data= JSON.stringify(this.props.qrdata)
+  
+    const  QR_Time = moment(data, "DD-MM-YYYY HH:mm:ss");
+    const  Device_Time = moment(new Date(), "DD-MM-YYYY HH:mm:ss");
+    
+     
+    const  timeDifference = Math.abs(QR_Time.diff(Device_Time, differenceIn, floating));
+    if(timeDifference===0 || timeDifference <=30)
+    {
+      this.props.navigation.navigate('Finish');
+    
+    }
+    else if(timeDifference > 30){
+      alert("Retry again")
+    }
+    console.log("Time difference -> " + timeDifference + ' ' + differenceIn);
+  }
+
   render() {
+    console.log(this.props)
+    {this.getTimeDiff()}
     return (
-      <View>
-        <Text> textInComponent </Text>
-      </View>
+     <>
+     </>
     );
   }
 }
+
+export default withNavigation (QRCheck);
