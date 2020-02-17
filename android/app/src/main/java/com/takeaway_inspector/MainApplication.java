@@ -3,6 +3,7 @@ package com.takeaway_inspector;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.levelasquez.androidopensettings.AndroidOpenSettingsPackage;
 import com.reactnativecommunity.rnpermissions.RNPermissionsPackage;
 import org.reactnative.camera.RNCameraPackage;
 import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
@@ -29,6 +30,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new AndroidOpenSettingsPackage(),
             new RNPermissionsPackage(),
             new RNCameraPackage(),
             new SafeAreaContextPackage(),

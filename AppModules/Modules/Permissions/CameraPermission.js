@@ -1,19 +1,15 @@
-import { Alert } from "react-native";
-import { findCoordinates } from "../LocationCheck/LocationCheck";
 import { PermissionsAndroid } from "react-native";
+import { CameraPermissionAlert} from '../Alert/CameraPermissionAlert';
 
-export async function requestLocationPermission() {
+export async function requestCameraPermission() {
   try {
     const granted = await PermissionsAndroid.request(
-      PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
-      {
-        title: "ReactNativeCode Location Permission",
-        message: "ReactNativeCode App needs access to your location "
-      }
+      PermissionsAndroid.PERMISSIONS.CAMERA
     );
     if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-      console.log("Location Permission Granted.");
+      console.log(" Permission Granted.");
     } else {
+      CameraPermissionAlert()
       console.log("Location Permission Not Granted");
     }
   } catch (err) {

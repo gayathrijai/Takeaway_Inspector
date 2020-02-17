@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {  StyleSheet, Text, View } from 'react-native';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import QRCheck from '../Modules/QRCheck/QRCheck';
+import { requestCameraPermission } from '../Modules/Permissions/CameraPermission';
+
  
 
 class Qrcode extends Component {
@@ -21,11 +23,16 @@ class Qrcode extends Component {
   render() {
   
     {this.state.qdata}
+    requestCameraPermission()
     console.log(this.state.qdata)
     return (
       <>
+         
         <QRCodeScanner
         onRead={this.onSuccess}
+        permissionDialogTitle='info'
+        permissionDialogMessage='Need camera permission'
+        
         showMarker={true}  
         bottomContent={
           <View style={{ marginTop: 57 }}>
