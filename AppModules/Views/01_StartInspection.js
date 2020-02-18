@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import { Text, View } from "react-native";
 
-export default class FinishInspection extends Component {
+export default class StartInspection extends Component {
   render() {
     return (
       <View>
-
-        <Text> Final Page </Text>
-
+        <Text> textInComponent </Text>
       </View>
     );
   }

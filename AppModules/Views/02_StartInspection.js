@@ -48,8 +48,10 @@ export default class StartInspection extends Component {
         {response}
         <TouchableOpacity onPress={() => {
             this.onInspect();
+
             Location.findCoordinates(this.props.navigation);
           
+
           }}> 
           <Text style={StartInspectionStyle.startinspectionopacity}>Start Inspection</Text>
         </TouchableOpacity>

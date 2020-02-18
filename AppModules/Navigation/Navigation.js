@@ -20,10 +20,12 @@ const AppNavigator = createStackNavigator({
   QRCode: QRCode
 },
 {
+
   initialRouteName:'Location',
   defaultNavigationOptions : {headerTitle : 'TakeAway Inspector',
 headerTintColor : '#177614'
 }
+ 
 });
 
 const AppContainer = createAppContainer(AppNavigator);

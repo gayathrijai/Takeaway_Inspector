@@ -5,23 +5,22 @@ import Geolocation from "react-native-geolocation-service";
 import React, { Component } from "react";
 import { Alert } from "react-native";
 import { locationAlert } from "../Alert/LocationPermissionAlert";
+
 import { withNavigation } from 'react-navigation';
 
-class LocationCheck extends Component {
+
  
 
 
-  findCoordinates = (navigation) => {
+class LocationCheck extends Component {
+  findCoordinates = () => {
     Geolocation.getCurrentPosition(
       position => {
         const getDistance = distance(position.coords);
-        if (getDistance < 100) {
+        if (getDistance > 100) {
           locationAlert();
         }
-        else if(getDistance>100){
-          navigation.navigate('QRCode')
-        }
-        
+ 
         console.log(
           `You are , ${getDistance}, meters away from ${lat}, ${lng}`
         );
@@ -44,4 +43,8 @@ export const distance = position => {
 };
 
 const Location = new LocationCheck();
+
 export default withNavigation (Location);
+
+export {Location};
+

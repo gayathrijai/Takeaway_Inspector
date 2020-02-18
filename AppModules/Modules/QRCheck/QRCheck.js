@@ -11,7 +11,9 @@ class QRCheck extends Component {
   
     const  QR_Time = moment(data, "DD-MM-YYYY HH:mm:ss");
     const  Device_Time = moment(new Date(), "DD-MM-YYYY HH:mm:ss");
+
     console.log(Device_Time)
+
     
      
     const  timeDifference = Math.abs(QR_Time.diff(Device_Time, differenceIn, floating));
@@ -21,7 +23,10 @@ class QRCheck extends Component {
     
     }
     else if(timeDifference > 30){
+
       alert("sorry this QR code is expired ! regenrate agin")
+
+    
     }
     console.log("Time difference -> " + timeDifference + ' ' + differenceIn);
   }
